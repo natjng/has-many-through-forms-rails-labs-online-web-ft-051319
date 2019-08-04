@@ -1,1 +1,7 @@
+<%= @user.username %>
 
+Posts You've Commented On: <br />
+
+<% @user.posts.each do |post| %>
+    <%= link_to post.title, post  %>
+<% end %>
