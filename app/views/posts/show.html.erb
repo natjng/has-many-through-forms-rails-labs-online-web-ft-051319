@@ -11,6 +11,10 @@
 <% end %>
 </ul>
 
+<p>
+Categories: <%= @post.categories.map(&:name).join(' ') %>
+</p>
+
 Comments:
 <ul>
 <% @post.comments.each do |comment| %>
@@ -19,6 +23,7 @@ Comments:
 </ul>
 
 Commentors:
+<!-- can also use .distinct -->
 <ul>
 <% @post.users.uniq.each do |user| %>
     <li><%= link_to user.username, user %></li>
